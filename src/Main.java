@@ -2,6 +2,8 @@ import ship.*;
 import weapon.Cannon;
 import weapon.Shrapnel;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -44,13 +46,13 @@ public class Main {
     private static List<ShrapnelShootingShip> createShrapnelShootingShips(List<Shrapnel> shrapnels, List<Cannon> cannons) {
         ShrapnelShootingShip cruiser = new Cruiser("Cruiser-1", shrapnels);
         ShrapnelShootingShip battleship = new Battleship("Battleship-1", shrapnels, cannons);
-        return List.of(cruiser, battleship);
+        return new ArrayList<>(Arrays.asList(cruiser, battleship));
     }
 
     private static List<CannonShootingShip> createCannonShootingShips(List<Shrapnel> shrapnels, List<Cannon> cannons) {
         CannonShootingShip frigate = new Frigate("Frigate-1", cannons);
         CannonShootingShip battleship = new Battleship("Battleship-2", shrapnels, cannons);
-        return List.of(frigate, battleship);
+        return new ArrayList<>(Arrays.asList(frigate, battleship));
     }
 }
 
